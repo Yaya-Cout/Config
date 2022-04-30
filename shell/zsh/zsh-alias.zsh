@@ -11,6 +11,8 @@ alias -s odt="libreoffice "
 alias -s docx="libreoffice "
 alias -s ogg="play"
 alias -s db="sqlitebrowser"
+# Bind $ with nothing
+alias "$"=""
 # JP2A alias
 alias -s jpg="jp2a --color"
 # JP2A for png images setup
