@@ -1,0 +1,20 @@
+#/swapfile	none	swap	sw	0	0
+UUID=B096-3C68	/boot/efi	vfat	defaults	0	1
+tmpfs	/tmp	tmpfs	defaults,size=4g	0	0
+tmpfs	/var/tmp	tmpfs   defaults,size=4g        0       0
+tmpfs	/var/log	tmpfs	defaults,nosuid,nodev,noatime,mode=0755,size=4g	0	0
+tmpfs	/var/crash	tmpfs   defaults,nosuid,nodev,noatime,mode=0755,size=4g 0       0
+tmpfs	/home/neo/.cache	tmpfs	defaults,size=4g	0	0
+tmpfs	/home/neo/.config/Code/Cache        tmpfs   defaults,size=4g        0       0
+tmpfs	/home/neo/.config/Code/User/workspaceStorage/        tmpfs   defaults,size=4g        0       0
+tmpfs	/home/neo/.config/Code/CachedExtensionVSIXs/        tmpfs   defaults,size=4g        0       0
+tmpfs	/home/neo/.config/Code/CachedData/        tmpfs   defaults,size=4g        0       0
+tmpfs	/home/neo/.config/Code/CachedExtensions        tmpfs   defaults,size=4g        0       0
+tmpfs	/home/neo/.config/Code/Code\040Cache        tmpfs   defaults,size=4g        0       0
+tmpfs	/home/neo/.config/Code/logs        tmpfs   defaults,size=4g        0       0
+tmpfs   /home/neo/.local/share/gvfs-metadata tmpfs   defaults,size=4g        0       0
+tmpfs   /home/neo/.local/share/pyppeteer tmpfs   defaults,size=4g        0
+tmpfs   /home/neo/.npm/_cacache tmpfs   defaults,size=4g        0
+tmpfs	/var/lib/apt/lists/        tmpfs   defaults,size=4g        0       0
+#/dev/disk/by-label/Sauvegardes /media/neo/Sauvegardes auto noauto,user 0 0
+#/media/neo/Sauvegardes/Musique /home/neo/Musique none defaults,bind,x-systemd.requires-mounts-for=/media/neo/Sauvegardes 0 0
