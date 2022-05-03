@@ -1,8 +1,9 @@
+#!/usr/bin/env bash
 # Get the real shell
 SHELL="$(readlink /proc/$$/exe)"
 export SHELL
 # If the shell is zsh, use $0
-if [[ "${SHELL}" == "/usr/bin/zsh" ]]; then
+if [[ "${SHELL}" == "/usr/bin/zsh" ]] || [[ "${SHELL}" = "/bin/zsh" ]]; then
   # Get shell conf path
   script_path=$(dirname $(realpath $0))
 # Else, use $BASH_SOURCE
@@ -16,7 +17,7 @@ SHELLCONFPATH="$(realpath "${script_path}/.." )"
 source "${SHELLCONFPATH}/shell/helpers.sh"
 # Get current shell
 # Get if used shell is zsh
-if [[ "${SHELL}" = "/usr/bin/zsh" ]]; then
+if [[ "${SHELL}" = "/usr/bin/zsh" ]] || [[ "${SHELL}" = "/bin/zsh" ]]; then
   # Log that the shell is zsh
   if [[ ${DEBUG} -eq 1 ]]; then
     echo "Shell is zsh"
@@ -35,7 +36,7 @@ elif [[ "${SHELL}" = "/usr/bin/bash" ]]; then
 else
   # Shell is not zsh or bash, it is unknown
   if [[ ${DEBUG} -eq 1 ]]; then
-    echo "Shell is unknown"
+    echo "Shell is unknown (shell path is ${SHELL})"
   fi
 fi
 if [[ ${DEBUG} -eq 1 ]]; then

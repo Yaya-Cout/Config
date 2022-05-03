@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Include helper functions
 source "shell/helpers.sh"
 # Get path
@@ -91,3 +91,12 @@ else
   # Handle special configs
   handle_special_configs
 fi
+
+# Iterate over all files in ./install
+for file in "./install/"*; do
+  # If the file is executable, run it
+  if [[ -x ${file} ]]; then
+    echo "Running ${file}"
+    ${file}
+  fi
+done

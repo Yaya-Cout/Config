@@ -131,12 +131,12 @@
     p10k segment -s $state -f yellow -t ${size[1]}b
   }
   function prompt_cpu() {
-	integer cpu_temp="$(</sys/class/thermal/thermal_zone9/temp) / 1000"
-	if (( cpu_temp >= 95 )); then
+  	integer cpu_temp="$(</sys/class/thermal/thermal_zone0/temp) / 1000"
+	  if (( cpu_temp >= 95 )); then
 	    p10k segment -s HOT -f red -i '🔥' -t "${cpu_temp}°C"
-	elif (( cpu_temp >= 80 )); then
+	  elif (( cpu_temp >= 80 )); then
 	    p10k segment -s WARM -f yellow -i '🌡' -t "${cpu_temp}°C"
-	fi
+	  fi
   }
   function prompt_uptime() {
     uptime="$(uptime -p | sed 's/[^ ]*//' | cut -c2-)"
