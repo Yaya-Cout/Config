@@ -1,4 +1,5 @@
-source /usr/share/zsh-antigen/antigen.zsh
+#source /usr/share/zsh-antigen/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -34,7 +35,7 @@ antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle djui/alias-tips
 antigen bundle Yaya-Cout/zsh-web
 antigen bundle zpm-zsh/ls
-antigen bundle sobolevn/wakatime-zsh-plugin
+# antigen bundle sobolevn/wakatime-zsh-plugin
 
 # Load the theme.
 antigen theme romkatv/powerlevel10k
