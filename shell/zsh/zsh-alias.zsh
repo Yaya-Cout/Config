@@ -11,8 +11,6 @@ alias -s odt="libreoffice "
 alias -s docx="libreoffice "
 alias -s ogg="play"
 alias -s db="sqlitebrowser"
-# Add update-grub global alias
-alias -g update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 # Bind $ with nothing
 alias "$"=""
 # JP2A alias

@@ -33,6 +33,8 @@ alias upsilon_yaya-cout="git remote set-url origin https://github.com/Yaya-Cout/
 alias tldr="tldr --theme base16"
 # Alias pacman to yay
 alias pacman="yay"
+# Add update-grub alias
+alias -g update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 # Get if gcp is in aliases, if yes, remove it
 if alias | grep "gcp=" >/dev/null; then
   unalias gcp
