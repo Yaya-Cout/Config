@@ -82,7 +82,7 @@
     proxy                 # system-wide http/https/ftp proxy
     battery               # internal battery
     # wifi                  # wifi speed
-    update
+    # update
     cpu
     # example               # example user-defined segment (see prompt_example function below)
   )
