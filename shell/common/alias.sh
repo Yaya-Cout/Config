@@ -31,6 +31,8 @@ alias upsilon_upstream="git remote set-url origin https://github.com/UpsilonNumw
 alias upsilon_yaya-cout="git remote set-url origin https://github.com/Yaya-Cout/Upsilon"
 # Configure tldr with color theme
 alias tldr="tldr --theme base16"
+# Alias pacman to yay
+alias pacman="yay"
 # Get if gcp is in aliases, if yes, remove it
 if alias | grep "gcp=" >/dev/null; then
   unalias gcp
