@@ -30,7 +30,7 @@ alias kvmssd="sudo kvm /dev/nvme0n1 -m 15G -bios /usr/share/ovmf/OVMF.fd -spice 
 alias upsilon_upstream="git remote set-url origin https://github.com/UpsilonNumworks/Upsilon"
 alias upsilon_yaya-cout="git remote set-url origin https://github.com/Yaya-Cout/Upsilon"
 # Configure tldr with color theme
-alias tldr="tldr --theme base16"
+# alias tldr="tldr --theme base16"
 # Alias pacman to yay
 alias pacman="yay"
 # Add update-grub alias
