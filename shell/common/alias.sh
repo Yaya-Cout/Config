@@ -1,5 +1,5 @@
 # Setup Firefox Nightly
-alias firefox="/home/neo/.apps/firefox/firefox"
+alias firefox="/home/neo/Téléchargements/firefox-nightly/firefox"
 # Setup ripgrep alias
 alias ripgrep="rg"
 # Setup make to build with the maximum parallelism available
@@ -33,6 +33,10 @@ alias upsilon_yaya-cout="git remote set-url origin https://github.com/Yaya-Cout/
 # alias tldr="tldr --theme base16"
 # Alias pacman to yay
 alias pacman="yay"
+# Add pacman-autoremove command
+alias pacman-autoremove="pacman -Qdtq | pacman -Rs -"
+# Add pacman-bigpackages alias
+alias "pacman-bigpackages"='expac -s "%-30n %m" | sort -rhk 2 | less'
 # Add update-grub alias
 alias -g update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 # Get if gcp is in aliases, if yes, remove it
