@@ -10,8 +10,8 @@ alias ipv4on="sudo ip address add 192.168.1.41/24 dev wlp0s20f3 && sudo ip addre
 # Setup scan alias to run clamdscan
 alias scan="clamdscan --multiscan --fdpass"
 # Setup whowns / whatown alias
-alias whowns="dpkg -S"
-alias whatown="apt-file show"
+alias whowns="pkgfile"
+alias whatown="pkgfile -l"
 # Setup apt-dump alias to list all manually installed packages
 alias apt-dump="apt-mark showmanual"
 # Create debsums-usable alias to run debsums with a usable output
@@ -38,7 +38,15 @@ alias pacman-autoremove="pacman -Qdtq | pacman -Rs -"
 # Add pacman-bigpackages alias
 alias "pacman-bigpackages"='expac -s "%-30n %m" | sort -rhk 2 | less'
 # Add update-grub alias
-alias -g update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+# Add settings to rich
+alias rich="rich --theme gruvbox-dark --hyperlinks --force-terminal"
+# Add rule alias to rich --rule
+alias rule="rich --rule"
+# Add written data since boot alias
+alias written-data="python3 -c 'print(int(open(\"/proc/diskstats\", \"r\").read().split(\"\n\")[0].strip().replace(\"  \", \"\").split(\" \")[9])*512/1000/1000/1000)'"
+# Add read data since boot alias
+alias read-data="python3 -c 'print(int(open(\"/proc/diskstats\", \"r\").read().split(\"\n\")[0].strip().replace(\"  \", \"\").split(\" \")[5])*512/1000/1000/1000)'"
 # Get if gcp is in aliases, if yes, remove it
 if alias | grep "gcp=" >/dev/null; then
   unalias gcp
