@@ -1,7 +1,7 @@
 #/swapfile	none	swap	sw	0	0
 UUID=B096-3C68	/boot/efi	vfat	defaults	0	1
 tmpfs	/tmp	tmpfs	defaults,size=4g	0	0
-tmpfs	/var/tmp	tmpfs   defaults,size=4g        0       0
+tmpfs	/var/tmp	tmpfs   defaults,size=8g        0       0
 tmpfs	/var/log	tmpfs	defaults,nosuid,nodev,noatime,mode=0755,size=4g	0	0
 tmpfs	/var/crash	tmpfs   defaults,nosuid,nodev,noatime,mode=0755,size=4g 0       0
 tmpfs	/home/neo/.cache	tmpfs	defaults,size=4g	0	0
