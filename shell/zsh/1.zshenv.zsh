@@ -1,7 +1,7 @@
 # Environnement variables and setup variables for zsh
 # Setup the antigen installation directory
-export _ANTIGEN_INSTALL_DIR=/home/neo/.antigen
-export _ANTIGEN_INSTALL_DIR=/usr/share/zsh-antigen/
+# export _ANTIGEN_INSTALL_DIR=/home/neo/.antigen
+# export _ANTIGEN_INSTALL_DIR=/usr/share/zsh/share
 # Setup the antigen log directory
 # export ANTIGEN_DEBUG_LOG=/tmp/antigen.log
 # Setup the path to the oh-my-zsh installation directory
