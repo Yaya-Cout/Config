@@ -10,6 +10,11 @@ function source_if_exists() {
     fi
     # Source the file
     source "${file}"
+  else
+    # Log the file
+    if [[ ${DEBUG} -eq 1 ]]; then
+      echo "Skipping ${file}"
+    fi
   fi
 }
 # Source a directory of shell scripts recursively
