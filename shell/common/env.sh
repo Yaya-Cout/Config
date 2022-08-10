@@ -8,3 +8,6 @@ export TERM=xterm-256color
 export ZSH_WAKATIME_BIN=/usr/local/bin/wakatime
 # TODO: Find what is it
 export DIALOG_SLEEP=4
+# Initialise the path to the editor
+export EDITOR=/usr/bin/nano
+export VISUAL=${EDITOR}
