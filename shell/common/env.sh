@@ -11,3 +11,5 @@ export DIALOG_SLEEP=4
 # Initialise the path to the editor
 export EDITOR=/usr/bin/nano
 export VISUAL=${EDITOR}
+# Set up the command path
+export PATH=${HOME}/bin:${HOME}/.local/bin:${PATH}
