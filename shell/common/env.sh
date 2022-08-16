@@ -13,3 +13,5 @@ export EDITOR=/usr/bin/nano
 export VISUAL=${EDITOR}
 # Set up the command path
 export PATH=${HOME}/bin:${HOME}/.local/bin:${PATH}
+# Install as user when using npm
+export npm_config_prefix=${HOME}/.local
