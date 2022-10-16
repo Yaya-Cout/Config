@@ -71,6 +71,7 @@
     time                    # current time
     # =========================[ Line #2 ]=========================
     newline                 # \n
+    healthcheck             # healthcheck score
     load                  # CPU load
     disk_usage            # disk usage
     ram                   # free RAM
@@ -111,13 +112,15 @@
       fi
     fi
   }
+
   prompt_code() {
     # echo $?
     if (( $? > 0 ))
     then
       p10k segment -i '✘' -t $? -f "red"
     fi
-}
+  }
+
   function prompt_core() {
     local size=()
     if ! zstat -A size +size ./ 2>/dev/null; then
@@ -130,6 +133,7 @@
     fi
     p10k segment -s $state -f yellow -t ${size[1]}b
   }
+
   function prompt_cpu() {
   	integer cpu_temp="$(</sys/class/thermal/thermal_zone0/temp) / 1000"
 	  if (( cpu_temp >= 95 )); then
@@ -138,9 +142,33 @@
 	    p10k segment -s WARM -f yellow -i '🌡' -t "${cpu_temp}°C"
 	  fi
   }
+
   function prompt_uptime() {
     uptime="$(uptime -p | sed 's/[^ ]*//' | cut -c2-)"
     p10k segment -f 248 -i '⧗' -t "$uptime"
+  }
+
+  function prompt_healthcheck() {
+  	local health_score="$(echo $(dbus-send --session --print-reply --dest=org.healthcheck /org/healthcheck org.healthcheck.Score.get_score 2>/dev/null || echo '-1') | tail -n 1 | awk '{print $NF}')"
+    # If health score is -1, then healthcheck is not running, so don't show anything
+    if (( health_score == -1 )); then
+      return
+    fi
+    # The health score is a number between 0 and 100 (100 being the best), so
+    # we can use it to determine the color of the segment
+    # In normal use, the score is between 60 and 80, so we'll use that as the
+    # threshold for the colors
+    if (( health_score >= 80 )); then
+      p10k segment -s HEALTHY -f green -i '🏥' -t "${health_score}"
+    elif (( health_score >= 60 )); then
+      p10k segment -s OK -f 248 -i '🏥' -t "${health_score}"
+    elif (( health_score >= 40 )); then
+      p10k segment -s WARNING -f yellow -i '🏥' -t "${health_score}"
+    elif (( health_score >= 20 )); then
+      p10k segment -s DANGER -f red -i '🏥' -t "${health_score}"
+    else
+      p10k segment -s CRITICAL -f red -i '🏥' -t "${health_score}"
+    fi
   }
 
   # User-defined prompt segments may optionally provide an instant_prompt_* function. Its job
@@ -169,8 +197,13 @@
   function instant_prompt_code() {
     prompt_code
   }
+
   function instant_prompt_cpu() {
     prompt_cpu
+  }
+
+  function instant_prompt_healthcheck() {
+    prompt_healthcheck
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
