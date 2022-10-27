@@ -1,3 +1,6 @@
+# Fix compinit: command not found error on antigen startup
+autoload -U compinit
+
 #source /usr/share/zsh-antigen/antigen.zsh
 source /usr/share/zsh/share/antigen.zsh
 
@@ -34,6 +37,7 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle djui/alias-tips
 antigen bundle Yaya-Cout/zsh-web
+antigen bundle Yaya-Cout/zsh-a
 antigen bundle zpm-zsh/ls
 # antigen bundle sobolevn/wakatime-zsh-plugin
 
@@ -43,3 +47,5 @@ antigen theme romkatv/powerlevel10k
 
 # Tell Antigen that you're done.
 antigen apply
+
+omz plugin load z
