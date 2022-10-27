@@ -187,3 +187,42 @@ wait_site_work () {
         sleep 10
     done
 }
+
+# Use fzf to select a directory and cd into it (without ./ prefix)
+cd2 () {
+    local dir
+    # Get if a directory is given as argument
+    if [[ -d "$1" ]]
+    then
+        dir="$1"
+    else
+        dir="./"
+    fi
+    dir="$(find . -type d -not -path '*/\.*' -not -path '*/node_modules' 2>/dev/null | fzf --prompt 'cd ' --exit-0)"
+    [[ -n "${dir}" ]] && builtin cd "${dir}" || return 1
+}
+
+# # Use fzf to select a directory and cd into it (without ./ prefix)
+# # It uses z to find the most used directories
+# a () {
+#     local dir
+#     # If arguments are given, rebind to z
+#     if [[ -n "$@" ]]
+#     then
+#         z "$@"
+#         return
+#     fi
+#     # dir="$(z -l | fzf --prompt 'cd ' --exit-0 --tac)"
+#     # We want to use z and find commands in parallel while fzf is waiting for
+#     # input
+#     dir="$(z -l & find . -type d -not -path '*/\.*' -not -path '*/node_modules' 2>/dev/null | fzf --prompt 'cd ' --exit-0 --tac)"
+
+#     # Return if the directory doesn't exist
+#     [[ -z "${dir}" ]] && return 1
+#     # Get the directory from the z output (we support directories with spaces)
+#     dir="$(echo "${dir}" | cut -d ' ' -f 2-)"
+#     # Remove spaces at the start of the directory (because of z)
+#     dir="$(echo "${dir}" | sed 's/^ *//')"
+#     [[ -n "${dir}" ]] && builtin cd "${dir}" || return 1
+#     # [[ -n "${dir}" ]] && builtin cd "${dir}" || return 1
+# }
