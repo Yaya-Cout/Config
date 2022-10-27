@@ -47,6 +47,8 @@ alias rule="rich --rule"
 alias written-data="python3 -c 'print(int(open(\"/proc/diskstats\", \"r\").read().split(\"\n\")[0].strip().replace(\"  \", \"\").split(\" \")[9])*512/1000/1000/1000)'"
 # Add read data since boot alias
 alias read-data="python3 -c 'print(int(open(\"/proc/diskstats\", \"r\").read().split(\"\n\")[0].strip().replace(\"  \", \"\").split(\" \")[5])*512/1000/1000/1000)'"
+# Alias python3-tb to py_rich_traceback.py
+alias python3-tb="py_rich_traceback.py"
 # Get if gcp is in aliases, if yes, remove it
 if alias | grep "gcp=" >/dev/null; then
   unalias gcp
