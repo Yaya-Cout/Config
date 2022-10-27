@@ -17,3 +17,5 @@ export PATH=${HOME}/bin:${HOME}/.local/bin:${PATH}
 export PATH=${HOME}/Documents/Code/Programes:${PATH}
 # Install as user when using npm
 export npm_config_prefix=${HOME}/.local
+# Setup GPG signing key
+export GPG_TTY=$(tty)
