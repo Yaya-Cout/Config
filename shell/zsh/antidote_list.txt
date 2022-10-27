@@ -1,0 +1,39 @@
+# Theme
+romkatv/powerlevel10k                kind:fpath
+
+# Import Oh My Zsh
+ohmyzsh/ohmyzsh path:lib             kind:fpath
+
+# Oh My Zsh plugins
+# ohmyzsh/ohmyzsh path:plugins/rails
+ohmyzsh/ohmyzsh path:plugins/textmate               kind:defer
+ohmyzsh/ohmyzsh path:plugins/ruby                   kind:defer
+ohmyzsh/ohmyzsh path:plugins/lighthouse             kind:defer
+ohmyzsh/ohmyzsh path:plugins/fasd                   kind:defer
+ohmyzsh/ohmyzsh path:plugins/docker                 kind:defer
+ohmyzsh/ohmyzsh path:plugins/kubectl                kind:defer
+ohmyzsh/ohmyzsh path:plugins/python                 kind:defer
+ohmyzsh/ohmyzsh path:plugins/heroku                 kind:defer
+ohmyzsh/ohmyzsh path:plugins/pip                    kind:defer
+# ohmyzsh/ohmyzsh path:plugins/lein
+
+ohmyzsh/ohmyzsh path:plugins/git                    kind:defer
+ohmyzsh/ohmyzsh path:plugins/common-aliases         kind:defer
+ohmyzsh/ohmyzsh path:plugins/colorize               kind:defer
+ohmyzsh/ohmyzsh path:plugins/zsh-navigation-tools   kind:defer
+ohmyzsh/ohmyzsh path:plugins/colored-man-pages      kind:defer
+ohmyzsh/ohmyzsh path:plugins/command-not-found      kind:defer
+ohmyzsh/ohmyzsh path:plugins/z                      kind:defer
+ohmyzsh/ohmyzsh path:plugins/npm                    kind:defer
+ohmyzsh/ohmyzsh path:plugins/systemadmin            kind:defer
+
+# Classic plugins
+zsh-users/zsh-syntax-highlighting     kind:defer
+zsh-users/zsh-autosuggestions         kind:defer
+zsh-users/zsh-completions             kind:defer
+MichaelAquilina/zsh-you-should-use    kind:defer
+djui/alias-tips                       kind:defer
+Yaya-Cout/zsh-web                     kind:defer
+# A have to be loaded after z, because it depends on it
+Yaya-Cout/zsh-a                       kind:defer
+zpm-zsh/ls                            kind:defer
